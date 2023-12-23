@@ -1,0 +1,14 @@
+opkg update
+opkg install lsblk resize2fs losetup parted
+
+lsblk
+
+#lsit partitions
+parted -l -s
+# make sure the drive path and partition selected is correct 
+parted -f -s /dev/sda resizepart 2 100%
+reboot
+
+losetup /dev/loop0 /dev/sda2 2> /dev/null
+resize2fs -f /dev/loop0
+reboot
