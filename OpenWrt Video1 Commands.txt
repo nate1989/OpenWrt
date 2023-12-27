@@ -1,12 +1,12 @@
 #commands form video
-#Setup/Install OpenWRT On Hyper-V 
-opkg update
-opkg install lsblk resize2fs losetup parted
+#Setup/Install OpenWRT On Hyper-V
 
-lsblk
+#installs need apps
+opkg update && opkg install lsblk resize2fs losetup parted
 
 #lsit partitions
-parted -l -s
+lsblk
+
 # make sure the drive path and partition selected is correct 
 parted -f -s /dev/sda resizepart 2 100%
 reboot
