@@ -1,10 +1,10 @@
-#commands form video
-#Setup/Install OpenWRT On Hyper-V
+# commands from the video
+# Setup/Install OpenWRT On Hyper-V
 
-#installs need apps
+# installs need apps
 opkg update && opkg install lsblk resize2fs losetup parted
 
-#lsit partitions
+# lsit partitions
 lsblk
 
 # make sure the drive path and partition selected is correct 
