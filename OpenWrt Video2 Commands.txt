@@ -1,0 +1,17 @@
+
+opkg update
+opkg install block-mount kmod-fs-ext4 e2fsprogs lsblk parted
+
+#lsit partitions
+lsblk
+
+# make sure the drive path and partition selected is correct in DISK
+DISK="/dev/sdb"
+parted -s ${DISK} -- mklabel gpt mkpart exroot 2048s -2048s
+DEVICE="${DISK}1"
+mkfs.ext4 -L 10ghdd ${DEVICE}
+
+# if you want to make a costem mount point make a folder using this comand <mkdir -p /YourLocation>
+mkdir -p /10ghdd
+
+reboot
