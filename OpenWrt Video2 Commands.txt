@@ -1,4 +1,5 @@
-
+#commands form video
+#
 opkg update
 opkg install block-mount kmod-fs-ext4 e2fsprogs lsblk parted
 

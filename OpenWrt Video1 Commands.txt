@@ -1,3 +1,5 @@
+#commands form video
+#Setup/Install OpenWRT On Hyper-V 
 opkg update
 opkg install lsblk resize2fs losetup parted
 
